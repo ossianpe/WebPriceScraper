@@ -20,19 +20,7 @@ import com.twilio.sdk.resource.factory.MessageFactory;
 
 class NotificationHandler { 
 	
-		// NOTE: These values MUST be filled out to receive SMS and
-		//       email notifications.
-		// Twilio User & Token information
-		// Find your Account Sid and Token at twilio.com/user/account
-		private static final String ACCOUNT_SID = "";
-	  	private static final String AUTH_TOKEN = "";
-	  	// Registered sending phone number
-	  	// Must be configured/confirmed on Twilio first
-	  	private static final String fromPhoneNumber = "";
-	  	// Gmail Account name and password
-	  	private static final String GmailAccount = "";
-	  	private static final String GmailPassword = "";
-	  	
+		static PrivateData prive = new PrivateData();
 		public static void NotificationSender(String passEmail, String notSubject, String notBody, String notPhoneNumber) {
 			try {
 				System.out.println("Sending email and SMS");
@@ -47,14 +35,14 @@ class NotificationHandler {
 		}
 	  
 		public static void TwilioSMS(String subject, String body, String phoneNumber) throws TwilioRestException {
-		    TwilioRestClient client = new TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN);
+		    TwilioRestClient client = new TwilioRestClient(prive.getACCOUNT_SID(), prive.getAUTH_TOKEN());
 			 
 		    // Build a filter for the MessageList
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("Body", ("\n" + subject + "\n" + body)));
 			//	    + "\n" + notificationBody)));
 			params.add(new BasicNameValuePair("To", "+1" + phoneNumber));
-			params.add(new BasicNameValuePair("From", "+1" + fromPhoneNumber));
+			params.add(new BasicNameValuePair("From", "+1" + prive.getFROM_PHONE_NUMBER()));
 			//	    params.add(new BasicNameValuePair("MediaUrl", "http://www.example.com/hearts.png"));
 			 
 			MessageFactory messageFactory = client.getAccount().getMessageFactory();
@@ -75,7 +63,7 @@ class NotificationHandler {
 			Session session = Session.getDefaultInstance(props,
 				new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(GmailAccount,GmailPassword);
+						return new PasswordAuthentication(prive.getGMAIL_ACCOUNT(),prive.getGMAIL_PASSWORD());
 					}
 				});
 	 
