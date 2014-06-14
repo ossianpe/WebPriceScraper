@@ -17,8 +17,8 @@ public class ScrapeDirector {
 /*    	ScrapeParameters scrapeDirector2 = new ScrapeParameters.ScrapeBuilder()
     			.setProductName("rMBP13 512GB")
         		.setHomePage("http://www.amazon.com/gp/offer-listing/B0096VCHMI/ref=dp_olp_all_mbc?ie=UTF8&condition=all")
-        		.setPhoneNumber("2489825810")
-        		.setEmail("roxiestargazer@gmail.com")
+        		.setPhoneNumber("")
+        		.setEmail("")
         		.setPrice(1300)
         		.setRefreshRate(30)
         		.build();
