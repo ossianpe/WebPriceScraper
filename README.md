@@ -22,8 +22,9 @@ Includes user configurable parameters in ScrapeDirector:<br>
 			.setPrice("[int]") //Highest desired price<br>
 			.setRefreshRate("[int]") //Refresh page rate (in seconds)<br>
 
-Note: Parameters are optional, but, obviously, if the homepage, price, refreshrate are not set the program will produce unexpected results.<br>
-      Program runs multi-threaded instances of RunThread so many different items can be watched and parameters can be set.<br>
+Note:<br>
+-Parameters are optional, but, obviously, if the homepage, price, refreshrate are not set the program will produce unexpected results.<br>
+-Program runs multi-threaded instances of RunThread so many different items can be watched and parameters can be set.<br>
 
 v2.0
 -------------------
