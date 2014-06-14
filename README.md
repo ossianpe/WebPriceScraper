@@ -25,7 +25,6 @@ Includes user configurable parameters in ScrapeDirector:<br>
 Note: Parameters are optional, but, obviously, if the homepage, price, refreshrate are not set the program will produce unexpected results.<br>
       Program runs multi-threaded instances of RunThread so many different items can be watched and parameters can be set.<br>
 
--------------------
 v2.0
 -------------------
 Updates:
@@ -36,7 +35,6 @@ Utilized factory class for handling multiple websites. Website is parased and co
 
 Note: Only Amazon scraper works properly.
 
--------------------
 v1.0:
 -------------------
 
